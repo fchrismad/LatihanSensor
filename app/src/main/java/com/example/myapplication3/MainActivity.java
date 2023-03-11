@@ -28,14 +28,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
-        StringBuilder sensorText = new StringBuilder();
-        for (Sensor currentSensor : sensorList) {
-            sensorText.append(currentSensor.getName())
-                    .append(System.getProperty("line.separator"));
-        }
-        TextView sensorTextView = findViewById(R.id.sensor_list);
-        sensorTextView.setText(sensorText);
 
         mTextSensorLight = findViewById(R.id.label_light);
         mTextSensorProximity = findViewById(R.id.label_proximity);
